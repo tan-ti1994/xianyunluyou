@@ -5,7 +5,7 @@
       <img :src="`${$axios.defaults.baseURL + item.url}`" alt="" />
     </el-carousel-item>
   </el-carousel>
-  <div @click="dianji">按钮</div>
+
   </div>
 </template>
 
@@ -27,12 +27,8 @@ export default {
       this.banners = res.data.data;
     });
   },
-  methods: {
-    dianji(){
-      this.$store.commit('user/statearr','谭总裁')
-      // this.$store.commit('user/setname','shadiao')
-    }
-  }
+  
+  
 };
 </script>
 
