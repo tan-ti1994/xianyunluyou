@@ -1,4 +1,5 @@
 <template>
+<!-- 轮播图 -->
 <div>
   <el-carousel height="400px" :interval="5000" arrow="always">
     <el-carousel-item v-for="(item, index) in banners" :key="index">

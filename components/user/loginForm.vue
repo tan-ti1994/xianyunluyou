@@ -58,7 +58,7 @@ export default {
             // 跳转到首页,定时器
 
             setTimeout(() => {
-              this.router.replace("/");
+              this.$router.replace("/");
             }, 10000);
           }
         });
