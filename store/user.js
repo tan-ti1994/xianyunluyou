@@ -12,9 +12,9 @@ export const mutations = {
 };
 // 异步修改state的数据,存放公共请求函数
 export const actions = {
+
     login(store, data) {
         // 登录接口
-      
         return  this.$axios({
             url: "/accounts/login",
             method: "POST",

@@ -212,14 +212,16 @@ export default {
       var vider = true;
       // 循坏rule属性的值是否为空
       Object.keys(rules).forEach(key => {
+        if (vider === false) return;
         if (rules[key].value === "") {
           this.$message.error(rules[key].message);
           vider = false;
-          return;
+         
         }
       });
+      // 为空不跳转
       if (vider === false) return;
-      //   跳转到机票首页
+      //   跳转到机票类表页
       this.$router.push({
         path: "/air/flights",
         query: this.form
