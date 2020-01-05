@@ -184,6 +184,15 @@ export default {
         data
       }).then(res => {
         console.log(res);
+        const { id } = res.data.data;
+        this.$message.success("订单正在生成,请稍等");
+        //  跳转到付款页
+        this.$router.push({
+          path:'/air/pay',
+          query:{
+            id
+          }
+        });
       });
     }
   },
@@ -191,7 +200,7 @@ export default {
   computed: {
     allPrice() {
       let price = 0;
-      if(!this.data.seat_infos.org_settle_price) return
+      if (!this.data.seat_infos.org_settle_price) return;
       // 机票价单格
       price += this.data.seat_infos.org_settle_price;
       // 保险价格
@@ -201,7 +210,7 @@ export default {
       // 人数
       price *= this.users.length;
       // 传递给store
-      this.$store.commit('air/setAllpirce',price)
+      this.$store.commit("air/setAllpirce", price);
       return "";
     }
   }
